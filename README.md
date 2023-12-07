@@ -1,6 +1,6 @@
 # Reproducible research: version control and R
 
-**link to questions 1, 2 and 3:**
+**link to questions 1, 2 and 3:** [ReadMe.md](README.md)
 
 **Question 4:**
 - Two plots are created side by side: plot1 and plot 2, which both visualise one of the random walks created from data1 and data2. The plot colour is a gradient which indicates the progression of time in the walk (progresses from dark to light blue over time). Both walks begin at the origin (0,0) but they form divergent paths by moving a fixed, random distance called 'h' which is set as 0.25 units. Both paths disperse from the origin and move further away over long time periods with more steps. Each of the random walks are different to eachother and the direction of the plotted paths changes randomly at each step making it a non-linear and unpredictable pattern.
@@ -13,7 +13,7 @@
 - ![image 1 showing changes to Question 4 code for reproducibility](question4.jpg)
 - ![image 2 showing changes to Question 4 code for reproducibility](question4_photo2.jpg)
 
-**Question 5:**
+**Question 5:** link to script I have used to answer [question_5_graph_analysis.R](question_5_graph_analysis.R)
 - there are 33 rows, and 13 columns
 
 - apply the logarithic transformation (log()) to the data for V (virion volume) and L (genome length).
