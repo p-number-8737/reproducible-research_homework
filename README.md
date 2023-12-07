@@ -14,7 +14,48 @@
 - ![image 2 showing changes to Question 4 code for reproducibility](question4_photo2.jpg)
 
 **Question 5:**
+- there are 33 rows, and 13 columns
 
+- apply the logarithic transformation (log()) to the data for V (virion volume) and L (genome length).
+
+- α = 1.5152 (the estimate of Log_L of lm), **p-value** = 6.44e-10
+- β = 1181.807 (back-transformed intercept of lm) **p-value** = 2.28e-10
+     - both p-values are <0.05 and are statistically significant.
+     - I did find approximately the same values as Table 2 (using the 95% CI)
+ 
+- the code to reproduce the figure shown is...
+     - library(ggplot2)
+     - data <- read.csv("/cloud/project/question-5-data/Cui_etal2014.csv")
+     - data <- data[data$Virion.volume..nm.nm.nm. > 0 & data$Genome.length..kb. > 0, ] #this makes sure the plot only inludes values > 0, added as when running the graph originally there were errors of non-finite values (i.e. NAs) which are filtered out
+     - data$log_V <- log(data$Virion.volume..nm.nm.nm.)
+     - data$log_L <- log(data$Genome.length..kb.)
+
+     - ggplot(data, aes(x = log_L, y = log_V)) + 
+        geom_point() +  #this plots the actual data points
+        geom_smooth(method = "lm", color = "blue", fill = "grey80") +  #this adds linear regression line with 95% confidence interval
+        theme_bw() + 
+        xlab("log [Genome length (kb)]") + 
+        ylab("log [Virion volume (nm^3)]") + 
+        xlim(c(2, 8)) +  #set x-axis limits
+        ylim(c(9, 20)) #set y-axis limits
+
+- estimated volume for a 300kb dsDNA virus = 6697006 nm3
+
+**Bonus Question**
+- _Reproducibility_is the capacity for other researchers to recreate the analysis and results of research by using the sama dataframes and methodology. This refers to the consistency of results across different researchers.
+- _Replicability_is conducting the research again and analysing the new data using the orginal methodology to identify if similar results are reached. This refers to the consistency of results across different experiments.
+  
+- GitHub can enhance these through:
+     - Version control which tracks changes made to code using dev and main branches. This means mistakes can be reverted.
+     - Collaboration with multiple people working simultaneously, merging changes to update scripts and resolving conflicts.
+     - Transparency of scripts allows other researchers to reuse and validate the code which improves reproducibility.
+ 
+- Limitations of GitHub are...
+     - Not all data can be shared publicly which limits data analysis collaboration
+     - Some analysis may need high computational resources which cannot be easily replicated.
+     - It can take a long time to learn how to effectively use GitHub which may lead to poorer quality/ lost work.
+
+       
 ## Instructions
 
 The homework for this Computer skills practical is divided into 5 questions for a total of 100 points (plus an optional bonus question worth 10 extra points). First, fork this repo and make sure your fork is made **Public** for marking. Answers should be added to the # INSERT ANSWERS HERE # section above in the **README.md** file of your forked repository.
