@@ -1,6 +1,6 @@
 # Reproducible research: version control and R
 
-**link to questions 1, 2 and 3:** [ReadMe.md](logistic_growth/README.md)
+**link to questions 1, 2 and 3:** https://github.com/p-number-8737/logistic_growth.git 
 
 **Question 4:**
 - Two plots are created side by side: plot1 and plot 2, which both visualise one of the random walks created from data1 and data2. The plot colour is a gradient which indicates the progression of time in the walk (progresses from dark to light blue over time). Both walks begin at the origin (0,0) but they form divergent paths by moving a fixed, random distance called 'h' which is set as 0.25 units. Both paths disperse from the origin and move further away over long time periods with more steps. Each of the random walks are different to eachother and the direction of the plotted paths changes randomly at each step making it a non-linear and unpredictable pattern.
