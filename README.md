@@ -1,10 +1,18 @@
 # Reproducible research: version control and R
 
-link to questions 1, 2 and 3: 
+**link to questions 1, 2 and 3:**
 
-Question 4: 
+**Question 4:**
+- Two plots are created side by side: plot1 and plot 2, which both visualise one of the random walks created from data1 and data2. The plot colour is a gradient which indicates the progression of time in the walk (progresses from dark to light blue over time). Both walks begin at the origin (0,0) but they form divergent paths by moving a fixed, random distance called 'h' which is set as 0.25 units. Both paths disperse from the origin and move further away over long time periods with more steps. Each of the random walks are different to eachother and the direction of the plotted paths changes randomly at each step making it a non-linear and unpredictable pattern.
 
-Question 5:
+
+- A random seed is used as the starting point in a Pseudorandom Number Generator (PRNG) which produces a sequence of random numbers. It works by initialising PRNG using a specific seed value to start the number generation. The same seed value will produce the same sequence of random numbers from the PRNG. This is important for reproducible random simulations as setting a seed allows the simulation to be run the same way by different researchers. In R scripts you set a seed by using the set.seed() function.
+
+- _file for reproducible simulation has been commited!_
+
+- 
+
+**Question 5:**
 
 ## Instructions
 
