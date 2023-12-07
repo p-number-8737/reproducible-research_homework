@@ -1,6 +1,10 @@
 # Reproducible research: version control and R
 
-\# INSERT ANSWERS HERE #
+link to questions 1, 2 and 3: 
+
+Question 4: 
+
+Question 5:
 
 ## Instructions
 
