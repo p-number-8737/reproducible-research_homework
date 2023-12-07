@@ -10,7 +10,8 @@
 
 - _file for reproducible simulation has been commited!_
 
-- 
+- ![image 1 showing changes to Question 4 code for reproducibility](question4.jpg)
+- ![image 2 showing changes to Question 4 code for reproducibility](question4_photo2.jpg)
 
 **Question 5:**
 
