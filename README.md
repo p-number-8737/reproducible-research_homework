@@ -8,7 +8,7 @@
 
 - A random seed is used as the starting point in a Pseudorandom Number Generator (PRNG) which produces a sequence of random numbers. It works by initialising PRNG using a specific seed value to start the number generation. The same seed value will produce the same sequence of random numbers from the PRNG. This is important for reproducible random simulations as setting a seed allows the simulation to be run the same way by different researchers. In R scripts you set a seed by using the set.seed() function.
 
-- _file for reproducible simulation has been commited!_
+- _path file for reproducible simulation:_ [random_walk.R](question-4-code/random_walk.R)
 
 - ![image 1 showing changes to Question 4 code for reproducibility](question4.jpg)
 - ![image 2 showing changes to Question 4 code for reproducibility](question4_photo2.jpg)
