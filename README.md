@@ -35,7 +35,7 @@
         geom_smooth(method = "lm", color = "blue", fill = "grey80") +  #this adds linear regression line with 95% confidence interval
         theme_bw() + 
         xlab("log [Genome length (kb)]") + 
-        ylab("log [Virion volume (nm^3)]") + 
+        ylab("log [Virion volume (nm3)]") + 
         xlim(c(2, 8)) +  #set x-axis limits
         ylim(c(9, 20)) #set y-axis limits
 
