@@ -24,13 +24,14 @@
      - I did find approximately the same values as Table 2 (using the 95% CI)
  
 - the code to reproduce the figure shown is...
-     - library(ggplot2)
-     - data <- read.csv("/cloud/project/question-5-data/Cui_etal2014.csv")
-     - data <- data[data$Virion.volume..nm.nm.nm. > 0 & data$Genome.length..kb. > 0, ] #this makes sure the plot only inludes values > 0, added as when running the graph originally there were errors of non-finite values (i.e. NAs) which are filtered out
-     - data$log_V <- log(data$Virion.volume..nm.nm.nm.)
-     - data$log_L <- log(data$Genome.length..kb.)
+  ```{r}
+  library(ggplot2)
+     data <- read.csv("/cloud/project/question-5-data/Cui_etal2014.csv")
+     data <- data[data$Virion.volume..nm.nm.nm. > 0 & data$Genome.length..kb. > 0, ] #this makes sure the plot only inludes values > 0, added as when running the graph originally there were errors of non-finite values (i.e. NAs) which are filtered out
+     data$log_V <- log(data$Virion.volume..nm.nm.nm.)
+     data$log_L <- log(data$Genome.length..kb.)
 
-     - ggplot(data, aes(x = log_L, y = log_V)) + 
+     ggplot(data, aes(x = log_L, y = log_V)) + 
         geom_point() +  #this plots the actual data points
         geom_smooth(method = "lm", color = "blue", fill = "grey80") +  #this adds linear regression line with 95% confidence interval
         theme_bw() + 
@@ -38,6 +39,9 @@
         ylab("log [Virion volume (nm3)]") + 
         xlim(c(2, 8)) +  #set x-axis limits
         ylim(c(9, 20)) #set y-axis limits
+  ```
+     
+
 
 - estimated volume for a 300kb dsDNA virus = 6697006 nm3
 
