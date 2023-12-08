@@ -42,8 +42,8 @@
 - estimated volume for a 300kb dsDNA virus = 6697006 nm3
 
 **Bonus Question**
-- _Reproducibility_is the capacity for other researchers to recreate the analysis and results of research by using the sama dataframes and methodology. This refers to the consistency of results across different researchers.
-- _Replicability_is conducting the research again and analysing the new data using the orginal methodology to identify if similar results are reached. This refers to the consistency of results across different experiments.
+- _Reproducibility_ is the capacity for other researchers to recreate the analysis and results of research by using the sama dataframes and methodology. This refers to the consistency of results across different researchers.
+- _Replicability_ is conducting the research again and analysing the new data using the orginal methodology to identify if similar results are reached. This refers to the consistency of results across different experiments.
   
 - GitHub can enhance these through:
      - Version control which tracks changes made to code using dev and main branches. This means mistakes can be reverted.
