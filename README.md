@@ -1,6 +1,6 @@
 # Reproducible research: version control and R
 
-**link to questions 1, 2 and 3:**
+**link to questions 1, 2 and 3:** https://github.com/p-number-8737/logistic_growth.git 
 
 **Question 4:**
 - Two plots are created side by side: plot1 and plot 2, which both visualise one of the random walks created from data1 and data2. The plot colour is a gradient which indicates the progression of time in the walk (progresses from dark to light blue over time). Both walks begin at the origin (0,0) but they form divergent paths by moving a fixed, random distance called 'h' which is set as 0.25 units. Both paths disperse from the origin and move further away over long time periods with more steps. Each of the random walks are different to eachother and the direction of the plotted paths changes randomly at each step making it a non-linear and unpredictable pattern.
@@ -8,13 +8,54 @@
 
 - A random seed is used as the starting point in a Pseudorandom Number Generator (PRNG) which produces a sequence of random numbers. It works by initialising PRNG using a specific seed value to start the number generation. The same seed value will produce the same sequence of random numbers from the PRNG. This is important for reproducible random simulations as setting a seed allows the simulation to be run the same way by different researchers. In R scripts you set a seed by using the set.seed() function.
 
-- _file for reproducible simulation has been commited!_
+- _path file for reproducible simulation:_ [random_walk.R](question-4-code/random_walk.R)
 
 - ![image 1 showing changes to Question 4 code for reproducibility](question4.jpg)
 - ![image 2 showing changes to Question 4 code for reproducibility](question4_photo2.jpg)
 
-**Question 5:**
+**Question 5:** link to script I have used to answer [question_5_graph_analysis.R](question_5_graph_analysis.R)
+- there are 33 rows, and 13 columns
 
+- apply the logarithic transformation (log()) to the data for V (virion volume) and L (genome length).
+
+- α = 1.5152 (the estimate of Log_L of lm), **p-value** = 6.44e-10
+- β = 1181.807 (back-transformed intercept of lm) **p-value** = 2.28e-10
+     - both p-values are <0.05 and are statistically significant.
+     - I did find approximately the same values as Table 2 (using the 95% CI)
+ 
+- the code to reproduce the figure shown is...
+     - library(ggplot2)
+     - data <- read.csv("/cloud/project/question-5-data/Cui_etal2014.csv")
+     - data <- data[data$Virion.volume..nm.nm.nm. > 0 & data$Genome.length..kb. > 0, ] #this makes sure the plot only inludes values > 0, added as when running the graph originally there were errors of non-finite values (i.e. NAs) which are filtered out
+     - data$log_V <- log(data$Virion.volume..nm.nm.nm.)
+     - data$log_L <- log(data$Genome.length..kb.)
+
+     - ggplot(data, aes(x = log_L, y = log_V)) + 
+        geom_point() +  #this plots the actual data points
+        geom_smooth(method = "lm", color = "blue", fill = "grey80") +  #this adds linear regression line with 95% confidence interval
+        theme_bw() + 
+        xlab("log [Genome length (kb)]") + 
+        ylab("log [Virion volume (nm^3)]") + 
+        xlim(c(2, 8)) +  #set x-axis limits
+        ylim(c(9, 20)) #set y-axis limits
+
+- estimated volume for a 300kb dsDNA virus = 6697006 nm3
+
+**Bonus Question**
+- _Reproducibility_ is the capacity for other researchers to recreate the analysis and results of research by using the sama dataframes and methodology. This refers to the consistency of results across different researchers.
+- _Replicability_ is conducting the research again and analysing the new data using the orginal methodology to identify if similar results are reached. This refers to the consistency of results across different experiments.
+  
+- GitHub can enhance these through:
+     - Version control which tracks changes made to code using dev and main branches. This means mistakes can be reverted.
+     - Collaboration with multiple people working simultaneously, merging changes to update scripts and resolving conflicts.
+     - Transparency of scripts allows other researchers to reuse and validate the code which improves reproducibility.
+ 
+- Limitations of GitHub are...
+     - Not all data can be shared publicly which limits data analysis collaboration
+     - Some analysis may need high computational resources which cannot be easily replicated.
+     - It can take a long time to learn how to effectively use GitHub which may lead to poorer quality/ lost work.
+
+       
 ## Instructions
 
 The homework for this Computer skills practical is divided into 5 questions for a total of 100 points (plus an optional bonus question worth 10 extra points). First, fork this repo and make sure your fork is made **Public** for marking. Answers should be added to the # INSERT ANSWERS HERE # section above in the **README.md** file of your forked repository.
